@@ -1,38 +1,33 @@
-## Coordinació de donacions inter-hospitalàries
+# Inter-Hospital Donation Network Optimization
 
-Aquest projecte aborda el problema de la coordinació de donacions d’òrgans entre hospitals a nivell internacional.
+This project addresses the problem of coordinating organ donations between hospitals at an international level.
 
-Es treballa amb 40 hospitals que s’han d’assignar a 4 xarxes exclusives de donació, de manera que cada hospital pertanyi només a una xarxa. L’objectiu és trobar una assignació òptima que minimitzi la distància entre hospitals dins de la mateixa xarxa i, alhora, tingui en compte la similitud de les seves poblacions.
+The system considers 40 hospitals that must be assigned to 4 exclusive donation networks, with each hospital belonging to exactly one network. The goal is to find an optimal assignment that minimizes the distance between hospitals within the same network while also considering the similarity of their population characteristics.
 
-## Coordinació de donacions inter-hospitalàries
+## Approach
 
-Aquest projecte aborda el problema de la coordinació de donacions d’òrgans entre hospitals a nivell internacional.
+The problem is solved using local search algorithms. Each state represents a possible assignment of the 40 hospitals to the 4 networks.
 
-Es treballa amb 40 hospitals que s’han d’assignar a 4 xarxes exclusives de donació, de manera que cada hospital pertanyi només a una xarxa. L’objectiu és trobar una assignació òptima que minimitzi la distància entre hospitals dins de la mateixa xarxa i, alhora, tingui en compte la similitud de les seves poblacions.
+The following algorithms have been implemented and compared:
+- Local Beam Search
+- Hill Climbing
+- Simulated Annealing
+- Random Search (as a baseline)
 
-## Resolució
+Probabilistic inference techniques are also used to work with Bayesian networks and handle incomplete data.
 
-El problema es resol mitjançant algorismes de cerca local. Cada estat representa una possible assignació dels 40 hospitals a les 4 xarxes.
-S’han implementat i comparat els següents algorismes:
-- Cerca local beam
-- Hill climbing
-- Simulated annealing
-- Cerca aleatòria (com a referència)
+## Project Structure
 
-També s’utilitzen tècniques d’inferència probabilística per treballar amb la xarxa bayesiana i gestionar dades incompletes.
+- **bn.py**: Basic implementation of Bayesian networks, factors, and probability distributions.
+- **inferencia.py**: Inference algorithms, including Variable Elimination, Rejection Sampling, and Weighted Sampling.
+- **p1.py**: Execution of experiments and implementation of local search methods.
+- **my_bns.py**: Definitions of the Bayesian networks used in the experiments.
+- **data.csv**: Dataset containing hospital information used in the experiments.
 
+## Stopping Criteria
 
+Local search algorithms (`hill_climbing`, `simulated_annealing`, `local_beam_search`) use stopping criteria based on improvement tolerance. If no significant improvement is observed, the algorithm may reach the maximum number of iterations without further progress.
 
-## Estructura del projecte
-- bn.py: Implementació bàsica de xarxes bayesianes, factors i distribucions de probabilitat.
-- inferencia.py: Conté els algoritmes d'inferencia, Variable Elimination, Rejection Sampling, i Weighted Sampling.
-- p1.py: Conté exemples d'úss dels algoritmes amb les dades proporcionades, així com funcions auxiliars per les cerques locals.
-- my_bns.py: Conté les definicions específiques de les xarxes bayesianes usades en els experiments.
-- data.csv: Fitxer amb les dades utilitzades en els experiments.
+## Performance
 
-
-##Criteris d'aturada:
-Les cerques locals (hill_climbing, simulated_annealing, cerca_local_beam) tenen criteris d'aturada basats en tolerancia de millora (tolerancia). Si no es complís aquest criteri, es podria arribar al màxim d'iteracions sense trobar millores significatives.
-
-##Rendiment:
-El rendiment en temps d'execució dels algoritmes pot variar segons la configuració dels paràmetres (per exemple, el nombre d'iteracions i la mida del beam).
+Execution time varies depending on parameter configuration, such as the number of iterations and the beam size.
