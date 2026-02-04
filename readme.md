@@ -34,9 +34,8 @@ Execution time varies depending on parameter configuration, such as the number o
 
 ## Autors
 
-Eva Matabosch 
+Eva Matabosch and Iman Tarfass
 
-Iman Tarfass
 
 
 
