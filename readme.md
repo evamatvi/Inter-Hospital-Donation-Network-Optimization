@@ -31,3 +31,9 @@ Local search algorithms (`hill_climbing`, `simulated_annealing`, `local_beam_sea
 ## Performance
 
 Execution time varies depending on parameter configuration, such as the number of iterations and the beam size.
+
+## Autors
+Eva Matabosch 
+Iman Tarfass
+
+
